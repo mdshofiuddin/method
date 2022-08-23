@@ -72,12 +72,15 @@ SQL
 	6. limt 1
 	7. in(parameter to search box)
 	8. floor()
+	8. floor()
 	9. ceiling()
 	10. avg()
 	11. sum()
 	12. count()
 	13. round(number,place of decimal,operation)
 	14. between num1 and num2
+	15. abs(value)[if result is minus remove it]
+	16. power(num,power)
 	
 	
 ------------------------------------------------------------------------------------------------------	
@@ -224,3 +227,9 @@ SQL
 	Query the Manhattan Distance between points p1 and p2 and round it to a scale of 4 decimal places.
 	
 	SELECT ROUND(ABS((MAX(LONG_W))-(MIN(LONG_W)))+ABS((MAX(LAT_N))-(MIN(LAT_N))),4) FROM STATION ;
+	
+	28. Consider p1(a,c) and p2(b,d) to be two points on a 2D plane where (a,c)  are the respective minimum and maximum values of
+	Northern Latitude (LAT_N) and (b,d) are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.
+	Query the Euclidean Distance between points p1 and p2 and format your answer to display  decimal digits. 
+	
+	select round(sqrt ( power((min(lat_n)-max(lat_n)),2)+ power((min(long_w)-max(long_w)),2) ) ,4) from station
