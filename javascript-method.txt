@@ -80,6 +80,7 @@ SQL
 	14. between num1 and num2
 	15. abs(value)[if result is minus remove it]
 	16. power(num,power)
+	17. median(col_name) for oracle
 	
 	
 ------------------------------------------------------------------------------------------------------	
@@ -239,3 +240,16 @@ SQL
 			frist count row num [select count(lat_n) from station;].output: 499, so median is
 			
 		SELECT ROUND(LAT_N,4) FROM STATION ORDER BY LAT_N ASC LIMIT 249,1;
+		
+		select round(median(lat_n),4) from station; [For oracle]
+		
+		
+	30. Query a list of CITY names from STATION for cities that have an even ID number. 
+		Print the results in any order, but exclude duplicates from the answer.
+	
+		SELECT DISTINCT(CITY) FROM STATION WHERE MOD(ID,2) = 0;
+		
+	31. Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries 
+		in the table.
+		
+		SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION ;
