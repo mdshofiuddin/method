@@ -253,3 +253,10 @@ SQL
 		in the table.
 		
 		SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION ;
+		
+	32. Varchar to Date Convertion with date format in oracle
+	
+		 SELECT ei.empid AS eid, ei.empname AS ename,ei.JOININGDATE as joining, pic.bpicture AS epic, spic.bsignature as spic,
+     spic.padsignature as pad FROM hr_employeeinfo ei LEFT JOIN hrm_employeepicture pic 
+    ON ei.empid = pic.vemployeeid left join hrm_employeesignature spic on ei.empid = spic.vemployeeid 
+     WHERE to_date(ei.joiningdate , 'dd/mm/yyyy') between to_date('01/01/2023','dd/mm/yyyy') and to_date('06/02/2023','dd/mm/yyyy') ;
