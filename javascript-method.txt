@@ -260,3 +260,8 @@ SQL
      spic.padsignature as pad FROM hr_employeeinfo ei LEFT JOIN hrm_employeepicture pic 
     ON ei.empid = pic.vemployeeid left join hrm_employeesignature spic on ei.empid = spic.vemployeeid 
      WHERE to_date(ei.joiningdate , 'dd/mm/yyyy') between to_date('01/01/2023','dd/mm/yyyy') and to_date('06/02/2023','dd/mm/yyyy') ;
+     
+     33. Duplicate Data 
+     
+     	--Duplicate Data    
+select * from hrm_employeepicture a where a.rowid > any (select b.rowid from hrm_employeepicture b where a.vemployeeid = b.vemployeeid);
